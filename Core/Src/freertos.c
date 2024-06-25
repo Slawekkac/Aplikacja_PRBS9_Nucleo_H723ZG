@@ -146,15 +146,15 @@ void StartTaskPrbs9(void *argument)
 {
   /* USER CODE BEGIN StartTaskPrbs9 */
 	static prbs_t sprbs = {.start = 0x01} ;
-	prbs_t *myprbs = &sprbs;
+	prbs_t *pPrbs9 = &sprbs;
 	uint16_t outbit;
 	uint16_t noofseq = 1;
 	printf("Function for generate PRBS9\n");
-	myprbs->currreg = myprbs->start;
+	pPrbs9->currreg = pPrbs9->start;
   /* Infinite loop */
   for(;;)
   {
-	  outbit = prbs(myprbs);
+	  outbit = prbs(pPrbs9);
       printf("New bit PRBS9= %d , seq= %d\n", outbit, noofseq++);
       if (noofseq > MAX_PRBS9) noofseq = 1;
       osDelay(100);
