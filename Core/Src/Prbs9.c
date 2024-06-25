@@ -15,7 +15,6 @@
 
 
 /* Private define ------------------------------------------------------------*/
-
 #define MASK_NEWBIT			0x01
 #define SHIFTR_PRBS9		8
 #define SHIFTR_PRBS5		4
@@ -38,10 +37,10 @@ uint16_t prbs(prbs_t *p);
 
 /* Global user code -----------------------------------------------------------*/
 /**
-  * @brief  generate PRBS9 signal for bode plot system ID
+  * @brief  generate PRBS9 signal
   *         polynomial x^9 + x^5 + 1
-  * @param  Prbs_t *p
-  * @retval int16_t prbs value
+  * @param  prbs_t *p
+  * @retval uint16_t prbs value
   */
 uint16_t prbs(prbs_t *p)
 {

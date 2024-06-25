@@ -19,7 +19,7 @@
 /* Exported types ------------------------------------------------------------*/
 typedef struct
 {
-	uint16_t start; 	// start LFSR value
+	uint16_t start; 	// start register value
 	uint16_t currreg; 	// current register
 	uint16_t newbit; 	// current newbit
 } prbs_t;
