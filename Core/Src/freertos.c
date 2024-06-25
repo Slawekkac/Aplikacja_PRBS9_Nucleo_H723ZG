@@ -150,13 +150,13 @@ void StartTaskPrbs9(void *argument)
 	uint16_t outbit;
 	uint16_t noofseq = 1;
 	printf("Function for generate PRBS9\n");
-	pPrbs9->currreg = pPrbs9->start;
+	pPrbs9->lfsr = pPrbs9->start;
   /* Infinite loop */
   for(;;)
   {
 	  outbit = prbs(pPrbs9);
       printf("New bit PRBS9= %d , seq= %d\n", outbit, noofseq++);
-      if (noofseq > MAX_PRBS9) noofseq = 1;
+      if (noofseq > MLS_PRBS9) noofseq = 1;
       osDelay(100);
       HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
   }

@@ -45,8 +45,8 @@ uint16_t prbs(prbs_t *p);
 uint16_t prbs(prbs_t *p)
 {
 
-	p->newbit = (((p->currreg >> SHIFTR_PRBS9) ^ (p->currreg >> SHIFTR_PRBS5)) & MASK_NEWBIT);
-	p->currreg = ((p->currreg << SHIFTL_PRBS1) | p->newbit) & MAX_PRBS9;
+	p->newbit = (((p->lfsr >> SHIFTR_PRBS9) ^ (p->lfsr >> SHIFTR_PRBS5)) & MASK_NEWBIT);
+	p->lfsr = ((p->lfsr << SHIFTL_PRBS1) | p->newbit) & MLS_PRBS9;
 
 	return p->newbit;
 }

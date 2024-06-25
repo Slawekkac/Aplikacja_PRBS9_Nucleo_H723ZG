@@ -19,13 +19,13 @@
 /* Exported types ------------------------------------------------------------*/
 typedef struct
 {
-	uint16_t start; 	// start register value
-	uint16_t currreg; 	// current register
+	uint16_t start; 	// start lfsr value
+	uint16_t lfsr; 		// current lfsr register - linear shift feedback register
 	uint16_t newbit; 	// current newbit
 } prbs_t;
 
 /* Exported constants --------------------------------------------------------*/
-#define MAX_PRBS9			0x1FF	//511
+#define MLS_PRBS9			0x1FF	//maximum lenght sequence
 
 /* Exported macro ------------------------------------------------------------*/
 
